@@ -1,5 +1,6 @@
 from scapy.all import *
-import sys, datetime, argparse, urllib2, threading
+import sys, datetime, argparse, threading
+from urllib.request import urlopen
 print("""
 
                       :::!~!!!!!:.
@@ -54,7 +55,7 @@ print("""
 
   """)
 
-req = urllib2.urlopen('https://pastebin.com/raw/eSCHTTVu')
+req = urlopen('https://pastebin.com/raw/eSCHTTVu')
 f = open('bot.txt', 'w')
 print('Bots are uploaded to the bot.txt file.')
 f.write(req.read())
